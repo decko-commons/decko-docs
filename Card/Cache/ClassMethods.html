@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Card::Cache::ClassMethods
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Card::Cache::ClassMethods";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Card.html" title="Card (class)">Card</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Cache.html" title="Card::Cache (class)">Cache</a></span></span>
+     &raquo; 
+    <span class="title">ClassMethods</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Card::Cache::ClassMethods
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="Populate.html" title="Card::Cache::Populate (module)">Populate</a></span></dd>
+  </dl>
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="../Cache.html" title="Card::Cache (class)">Card::Cache</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>card/lib/card/cache/class_methods.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>class methods for Card::Cache</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#counter-instance_method" title="#counter (instance method)">#<strong>counter</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute counter.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#no_renewal-instance_method" title="#no_renewal (instance method)">#<strong>no_renewal</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute no_renewal.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(klass)  &#x21d2; {Card::Cache} </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>create a new cache for the ruby class provided.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cache_by_class-instance_method" title="#cache_by_class (instance method)">#<strong>cache_by_class</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#renew-instance_method" title="#renew (instance method)">#<strong>renew</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>clear the temporary caches and ensure we’re using the latest stamp on the shared caches.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#renew_shared-instance_method" title="#renew_shared (instance method)">#<strong>renew_shared</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset-instance_method" title="#reset (instance method)">#<strong>reset</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>reset standard cached for all classes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_all-instance_method" title="#reset_all (instance method)">#<strong>reset_all</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>reset all caches for all classes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_global-instance_method" title="#reset_global (instance method)">#<strong>reset_global</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>completely wipe out all caches, often including the Shared cache of other decks using the same mechanism.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_other-instance_method" title="#reset_other (instance method)">#<strong>reset_other</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>reset Codename cache and delete tmp files (the non-standard caches).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_shared-instance_method" title="#reset_shared (instance method)">#<strong>reset_shared</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>reset the Shared cache for all classes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_temp-instance_method" title="#reset_temp (instance method)">#<strong>reset_temp</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>reset the Temporary cache for all classes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#restore-instance_method" title="#restore (instance method)">#<strong>restore</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shared_cache-instance_method" title="#shared_cache (instance method)">#<strong>shared_cache</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shared_on!-instance_method" title="#shared_on! (instance method)">#<strong>shared_on!</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tallies-instance_method" title="#tallies (instance method)">#<strong>tallies</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Populate.html" title="Card::Cache::Populate (module)">Populate</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Populate.html#populate_fields-instance_method" title="Card::Cache::Populate#populate_fields (method)">#populate_fields</a></span>, <span class='object_link'><a href="Populate.html#populate_ids-instance_method" title="Card::Cache::Populate#populate_ids (method)">#populate_ids</a></span>, <span class='object_link'><a href="Populate.html#populate_names-instance_method" title="Card::Cache::Populate#populate_names (method)">#populate_names</a></span></p>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="counter=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="counter-instance_method">
+  
+    #<strong>counter</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute counter.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 9</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_counter'>counter</span>
+  <span class='ivar'>@counter</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="no_renewal=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="no_renewal-instance_method">
+  
+    #<strong>no_renewal</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute no_renewal.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_no_renewal'>no_renewal</span>
+  <span class='ivar'>@no_renewal</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="[]-instance_method">
+  
+    #<strong>[]</strong>(klass)  &#x21d2; <tt>{<span class='object_link'><a href="../Cache.html" title="Card::Cache (class)">Card::Cache</a></span>}</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>create a new cache for the ruby class provided</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>klass</span>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>{<span class='object_link'><a href="../Cache.html" title="Card::Cache (class)">Card::Cache</a></span>}</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='op'>[]</span> <span class='id identifier rubyid_klass'>klass</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nil klass</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+  <span class='id identifier rubyid_cache_by_class'>cache_by_class</span><span class='lbracket'>[</span><span class='id identifier rubyid_klass'>klass</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='id identifier rubyid_new'>new</span> <span class='label'>class:</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='label'>store:</span> <span class='lparen'>(</span><span class='id identifier rubyid_shared_cache'>shared_cache</span> <span class='op'>||</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cache_by_class-instance_method">
+  
+    #<strong>cache_by_class</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 101</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cache_by_class'>cache_by_class</span>
+  <span class='ivar'>@cache_by_class</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="renew-instance_method">
+  
+    #<strong>renew</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>clear the temporary caches and ensure we’re using the latest stamp
+on the shared caches.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 22</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_renew'>renew</span>
+  <span class='comment'># Cardio.config.cache_log_level = :debug
+</span>  <span class='comment'># Cardio.config.view_cache = true
+</span>  <span class='comment'># Cardio.config.asset_refresh = :cautious
+</span>  <span class='comment'># Cache.reset_all
+</span>
+  <span class='const'><span class='object_link'><a href="../../Card.html" title="Card (class)">Card</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Cache.html" title="Card::Cache (class)">Cache</a></span></span><span class='period'>.</span><span class='id identifier rubyid_counter'><span class='object_link'><a href="#counter-instance_method" title="Card::Cache::ClassMethods#counter (method)">counter</a></span></span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_no_renewal'>no_renewal</span>
+
+  <span class='id identifier rubyid_renew_shared'>renew_shared</span>
+  <span class='id identifier rubyid_cache_by_class'>cache_by_class</span><span class='period'>.</span><span class='id identifier rubyid_each_value'>each_value</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_cache'>cache</span><span class='op'>|</span>
+    <span class='id identifier rubyid_cache'>cache</span><span class='period'>.</span><span class='id identifier rubyid_temp'>temp</span><span class='period'>.</span><span class='id identifier rubyid_reset'>reset</span>
+    <span class='id identifier rubyid_cache'>cache</span><span class='period'>.</span><span class='id identifier rubyid_shared'>shared</span><span class='op'>&amp;.</span><span class='id identifier rubyid_renew'>renew</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_populate_temp_cache'>populate_temp_cache</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="renew_shared-instance_method">
+  
+    #<strong>renew_shared</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_renew_shared'>renew_shared</span>
+  <span class='const'><span class='object_link'><a href="../../Card.html" title="Card (class)">Card</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Cache.html" title="Card::Cache (class)">Cache</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Shared.html" title="Card::Cache::Shared (class)">Shared</a></span></span><span class='period'>.</span><span class='id identifier rubyid_renew'><span class='object_link'><a href="Shared.html#renew-instance_method" title="Card::Cache::Shared#renew (method)">renew</a></span></span> <span class='kw'>if</span> <span class='id identifier rubyid_shared_cache'>shared_cache</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset-instance_method">
+  
+    #<strong>reset</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>reset standard cached for all classes</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset'>reset</span>
+  <span class='id identifier rubyid_reset_shared'>reset_shared</span>
+  <span class='id identifier rubyid_reset_temp'>reset_temp</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset_all-instance_method">
+  
+    #<strong>reset_all</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>reset all caches for all classes</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset_all'>reset_all</span>
+  <span class='id identifier rubyid_reset_shared'>reset_shared</span>
+  <span class='id identifier rubyid_reset_temp'>reset_temp</span>
+  <span class='id identifier rubyid_reset_other'>reset_other</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset_global-instance_method">
+  
+    #<strong>reset_global</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>completely wipe out all caches, often including the Shared cache of
+other decks using the same mechanism.
+Generally prefer <span class='object_link'><a href="#reset_all-instance_method" title="Card::Cache::ClassMethods#reset_all (method)">#reset_all</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#reset_all-instance_method" title="Card::Cache::ClassMethods#reset_all (method)">#reset_all</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset_global'>reset_global</span>
+  <span class='id identifier rubyid_cache_by_class'>cache_by_class</span><span class='period'>.</span><span class='id identifier rubyid_each_value'>each_value</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_cache'>cache</span><span class='op'>|</span>
+    <span class='id identifier rubyid_cache'>cache</span><span class='period'>.</span><span class='id identifier rubyid_temp'>temp</span><span class='period'>.</span><span class='id identifier rubyid_reset'>reset</span>
+    <span class='id identifier rubyid_cache'>cache</span><span class='period'>.</span><span class='id identifier rubyid_shared'>shared</span><span class='op'>&amp;.</span><span class='id identifier rubyid_annihilate'>annihilate</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_reset_other'>reset_other</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset_other-instance_method">
+  
+    #<strong>reset_other</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>reset Codename cache and delete tmp files
+(the non-standard caches)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 84</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset_other'>reset_other</span>
+  <span class='const'><span class='object_link'><a href="../../Card.html" title="Card (class)">Card</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Codename.html" title="Card::Codename (class)">Codename</a></span></span><span class='period'>.</span><span class='id identifier rubyid_reset_cache'><span class='object_link'><a href="../Codename.html#reset_cache-class_method" title="Card::Codename.reset_cache (method)">reset_cache</a></span></span>
+  <span class='const'><span class='object_link'><a href="../../Cardio.html" title="Cardio (module)">Cardio</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Cardio/Utils.html" title="Cardio::Utils (module)">Utils</a></span></span><span class='period'>.</span><span class='id identifier rubyid_delete_tmp_files!'><span class='object_link'><a href="../../Cardio/Utils.html#delete_tmp_files!-class_method" title="Cardio::Utils.delete_tmp_files! (method)">delete_tmp_files!</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset_shared-instance_method">
+  
+    #<strong>reset_shared</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>reset the Shared cache for all classes</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset_shared'>reset_shared</span>
+  <span class='const'><span class='object_link'><a href="../../Card.html" title="Card (class)">Card</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Cache.html" title="Card::Cache (class)">Cache</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Shared.html" title="Card::Cache::Shared (class)">Shared</a></span></span><span class='period'>.</span><span class='id identifier rubyid_reset'><span class='object_link'><a href="Shared.html#reset-instance_method" title="Card::Cache::Shared#reset (method)">reset</a></span></span> <span class='kw'>if</span> <span class='id identifier rubyid_shared_cache'>shared_cache</span>
+  <span class='id identifier rubyid_cache_by_class'>cache_by_class</span><span class='period'>.</span><span class='id identifier rubyid_each_value'>each_value</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_cache'>cache</span><span class='op'>|</span>
+    <span class='id identifier rubyid_cache'>cache</span><span class='period'>.</span><span class='id identifier rubyid_shared'>shared</span><span class='op'>&amp;.</span><span class='id identifier rubyid_reset'>reset</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset_temp-instance_method">
+  
+    #<strong>reset_temp</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>reset the Temporary cache for all classes</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset_temp'>reset_temp</span>
+  <span class='id identifier rubyid_cache_by_class'>cache_by_class</span><span class='period'>.</span><span class='id identifier rubyid_each_value'>each_value</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_cache'>cache</span><span class='op'>|</span> <span class='id identifier rubyid_cache'>cache</span><span class='period'>.</span><span class='id identifier rubyid_temp'>temp</span><span class='period'>.</span><span class='id identifier rubyid_reset'>reset</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="restore-instance_method">
+  
+    #<strong>restore</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+89
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 89</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_restore'>restore</span>
+  <span class='id identifier rubyid_reset_temp'>reset_temp</span>
+  <span class='id identifier rubyid_seed_from_stash'>seed_from_stash</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shared_cache-instance_method">
+  
+    #<strong>shared_cache</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_shared_cache'>shared_cache</span>
+  <span class='kw'>return</span> <span class='ivar'>@shared_cache</span> <span class='kw'>unless</span> <span class='ivar'>@shared_cache</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
+  <span class='ivar'>@shared_cache</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NO_RAILS_CACHE</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>true</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_shared_on!'>shared_on!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shared_on!-instance_method">
+  
+    #<strong>shared_on!</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94
+95
+96
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 94</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_shared_on!'>shared_on!</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='ivar'>@shared_cache</span>
+
+  <span class='ivar'>@cache_by_class</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='ivar'>@shared_cache</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Cardio.html" title="Cardio (module)">Cardio</a></span></span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_shared_cache'>shared_cache</span> <span class='op'>&amp;&amp;</span> <span class='const'><span class='object_link'><a href="../../Cardio.html" title="Cardio (module)">Cardio</a></span></span><span class='period'>.</span><span class='id identifier rubyid_cache'><span class='object_link'><a href="../../Cardio.html#cache-class_method" title="Cardio.cache (method)">cache</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tallies-instance_method">
+  
+    #<strong>tallies</strong>  &#x21d2; <tt><span class='object_link'><a href="../../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+111
+112
+113</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/cache/class_methods.rb', line 111</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_tallies'>tallies</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tally_total'>tally_total</span><span class='embexpr_end'>}</span><span class='tstring_content'> Cache calls (</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_counter'>counter</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_v'>v</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Dec 13 14:24:51 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.2.2).
+</div>
+
+    </div>
+  </body>
+</html>

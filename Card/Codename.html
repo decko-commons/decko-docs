@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Card::Codename
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Card::Codename";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></span>
+     &raquo; 
+    <span class="title">Codename</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Card::Codename
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">Card::Codename</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>card/lib/card/codename.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span>’s names can be changed, and therefore <em>names</em> should not be directly mentioned
+in code, lest a name change break the application.</p>
+
+<p>Instead, a <span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span> that needs specific code manipulations should be given a <span class='object_link'><a href="" title="Card::Codename (class)">Codename</a></span>,
+which will not change even if the card’s name does.</p>
+
+<p>An administrator might add to the Company card via the RESTful web API with a url like</p>
+
+<pre class="code ruby"><code class="ruby">/update/CARDNAME?card[codename]=CODENAME
+</code></pre>
+
+<p>…or via the api like</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></span><span class='lbracket'>[</span><span class='const'>CARDNAME</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_update!'>update!</span> <span class='label'>codename:</span> <span class='const'>CODENAME</span>
+</code></pre>
+
+<p>Generally speaking, <em>codenames</em> are represented by Symbols.</p>
+
+<p>The <span class='object_link'><a href="" title="Card::Codename (class)">Codename</a></span> class provides a fast cache for this slow-changing data.
+Every process maintains a complete cache that is not frequently reset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#[]-class_method" title="[] (class method)">.<strong>[]</strong>(codename)  &#x21d2; Symbol </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns codename for id and id for codename.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#card-class_method" title="card (class method)">.<strong>card</strong>(codename)  &#x21d2; Card </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#codehash-class_method" title="codehash (class method)">.<strong>codehash</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A hash of two hashes: - the c2i hash has codenames (symbols) as keys and ids (integers) as values - the i2c hash has the opposite.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exist%3F-class_method" title="exist? (class method)">.<strong>exist?</strong>(codename)  &#x21d2; True/False </a>
+    
+
+    
+      (also: exists?)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_id_constants-class_method" title="generate_id_constants (class method)">.<strong>generate_id_constants</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Creates ruby constants for codenames.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#id-class_method" title="id (class method)">.<strong>id</strong>(codename)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#id!-class_method" title="id! (class method)">.<strong>id!</strong>(codename)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ids-class_method" title="ids (class method)">.<strong>ids</strong>  &#x21d2; Array&lt;Integer&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>List of ids of cards with codenames.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-class_method" title="name (class method)">.<strong>name</strong>(codename)  &#x21d2; Card::Name </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name!-class_method" title="name! (class method)">.<strong>name!</strong>(codename)  &#x21d2; Card::Name </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#process_codenames-class_method" title="process_codenames (class method)">.<strong>process_codenames</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Queries the database and generates a “codehash” (see #codehash).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#recode-class_method" title="recode (class method)">.<strong>recode</strong>(oldcode, newcode)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Update a codenamed card’s codename.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_cache-class_method" title="reset_cache (class method)">.<strong>reset_cache</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>clear codename cache both in local variable and in temporary and shared caches.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="[]-class_method">
+  
+    .<strong>[]</strong>(codename)  &#x21d2; <tt>Symbol</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns codename for id and id for codename</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>codename</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>, <tt>Symbol</tt>, <tt>String</tt>, <tt><span class='object_link'><a href="Name.html" title="Card::Name (class)">Card::Name</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='op'>[]</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='kw'>when</span> <span class='const'>Integer</span>
+    <span class='id identifier rubyid_codehash'>codehash</span><span class='lbracket'>[</span><span class='symbol'>:i2c</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_codename'>codename</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>String</span>
+    <span class='id identifier rubyid_codehash'>codehash</span><span class='lbracket'>[</span><span class='symbol'>:c2i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_codename'>codename</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_codename'>codename</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span> <span class='op'>:</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="card-class_method">
+  
+    .<strong>card</strong>(codename)  &#x21d2; <tt><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>codename</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_card'>card</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_card_id'>card_id</span> <span class='op'>=</span> <span class='id identifier rubyid_id'>id</span><span class='lparen'>(</span><span class='id identifier rubyid_codename'>codename</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='const'><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_card_id'>card_id</span><span class='rbracket'>]</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+    <span class='kw'>yield</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="codehash-class_method">
+  
+    .<strong>codehash</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>A hash of two hashes:
+- the c2i hash has codenames (symbols) as keys and ids (integers) as values
+- the i2c hash has the opposite.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>(the codehash)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 138</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_codehash'>codehash</span>
+  <span class='ivar'>@codehash</span> <span class='op'>||=</span> <span class='id identifier rubyid_load_codehash'>load_codehash</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exist?-class_method">
+  
+    .<strong>exist?</strong>(codename)  &#x21d2; <tt>True/False</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='exists?-class_method'>exists?</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>codename</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>True/False</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_exist?'>exist?</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='id identifier rubyid_id'>id</span><span class='lparen'>(</span><span class='id identifier rubyid_codename'>codename</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_id_constants-class_method">
+  
+    .<strong>generate_id_constants</strong>  &#x21d2; <tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Creates ruby constants for codenames. Eg, if a card has the codename <em>gibbon</em>,
+then Card::GibbonID will contain the id for that card.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 106</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_id_constants'>generate_id_constants</span>
+  <span class='id identifier rubyid_codehash'>codehash</span><span class='lbracket'>[</span><span class='symbol'>:c2i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_codename'>codename</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='op'>|</span>
+    <span class='const'><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></span><span class='period'>.</span><span class='id identifier rubyid_const_get_or_set'>const_get_or_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_codename'>codename</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_camelize'>camelize</span><span class='embexpr_end'>}</span><span class='tstring_content'>ID</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_id'>id</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="id-class_method">
+  
+    .<strong>id</strong>(codename)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>codename</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='kw'>when</span> <span class='const'>Symbol</span><span class='comma'>,</span> <span class='const'>String</span>
+    <span class='id identifier rubyid_codehash'>codehash</span><span class='lbracket'>[</span><span class='symbol'>:c2i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_codename'>codename</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rbracket'>]</span>
+  <span class='kw'>when</span> <span class='const'>Integer</span>
+    <span class='id identifier rubyid_codehash'>codehash</span><span class='lbracket'>[</span><span class='symbol'>:i2c</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_codename'>codename</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_codename'>codename</span> <span class='op'>:</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="id!-class_method">
+  
+    .<strong>id!</strong>(codename)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>codename</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 89</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_id!'>id!</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='id identifier rubyid_id'>id</span><span class='lparen'>(</span><span class='id identifier rubyid_codename'>codename</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_unknown_codename!'>unknown_codename!</span><span class='lparen'>(</span><span class='id identifier rubyid_codename'>codename</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ids-class_method">
+  
+    .<strong>ids</strong>  &#x21d2; <tt>Array&lt;Integer&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns list of ids of cards with codenames.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Integer&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>list of ids of cards with codenames</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 100</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ids'>ids</span>
+  <span class='id identifier rubyid_codehash'>codehash</span><span class='lbracket'>[</span><span class='symbol'>:i2c</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name-class_method">
+  
+    .<strong>name</strong>(codename)  &#x21d2; <tt><span class='object_link'><a href="Name.html" title="Card::Name (class)">Card::Name</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>codename</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Name.html" title="Card::Name (class)">Card::Name</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='lparen'>(</span><span class='id identifier rubyid_card_id'>card_id</span> <span class='op'>=</span> <span class='id identifier rubyid_id'>id</span> <span class='id identifier rubyid_codename'>codename</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='const'><span class='object_link'><a href="Lexicon.html" title="Card::Lexicon (module)">Lexicon</a></span></span><span class='period'>.</span><span class='id identifier rubyid_name'><span class='object_link'><a href="Lexicon.html#name-class_method" title="Card::Lexicon.name (method)">name</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_card_id'>card_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name!-class_method">
+  
+    .<strong>name!</strong>(codename)  &#x21d2; <tt><span class='object_link'><a href="Name.html" title="Card::Name (class)">Card::Name</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>codename</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>, <tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Name.html" title="Card::Name (class)">Card::Name</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 95</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_name!'>name!</span> <span class='id identifier rubyid_codename'>codename</span>
+  <span class='lparen'>(</span><span class='id identifier rubyid_card_id'>card_id</span> <span class='op'>=</span> <span class='id identifier rubyid_id!'>id!</span> <span class='id identifier rubyid_codename'>codename</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='const'><span class='object_link'><a href="Lexicon.html" title="Card::Lexicon (module)">Lexicon</a></span></span><span class='period'>.</span><span class='id identifier rubyid_name'><span class='object_link'><a href="Lexicon.html#name-class_method" title="Card::Lexicon.name (method)">name</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_card_id'>card_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="process_codenames-class_method">
+  
+    .<strong>process_codenames</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Queries the database and generates a “codehash” (see #codehash).</p>
+
+<p>It <em>also</em> seeds the Card and Lexicon caches with codename details</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>(the codehash)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128
+129
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_process_codenames'>process_codenames</span>
+  <span class='id identifier rubyid_codenamed_cards'>codenamed_cards</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='label'>c2i:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>i2c:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_card'>card</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span>
+    <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:c2i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_card'>card</span><span class='period'>.</span><span class='id identifier rubyid_codename'>codename</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_card'>card</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+    <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:i2c</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_card'>card</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_card'>card</span><span class='period'>.</span><span class='id identifier rubyid_codename'>codename</span>
+    <span class='id identifier rubyid_seed_caches'>seed_caches</span> <span class='id identifier rubyid_card'>card</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="recode-class_method">
+  
+    .<strong>recode</strong>(oldcode, newcode)  &#x21d2; <tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Update a codenamed card’s codename</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115
+116
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_recode'>recode</span> <span class='id identifier rubyid_oldcode'>oldcode</span><span class='comma'>,</span> <span class='id identifier rubyid_newcode'>newcode</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_id'>id</span><span class='lparen'>(</span><span class='id identifier rubyid_oldcode'>oldcode</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_id'>id</span><span class='lparen'>(</span><span class='id identifier rubyid_newcode'>newcode</span><span class='rparen'>)</span>
+
+  <span class='const'><span class='object_link'><a href="../Rails.html" title="Rails (module)">Rails</a></span></span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>recode </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_oldcode'>oldcode</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_newcode'>newcode</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>codename:</span> <span class='id identifier rubyid_oldcode'>oldcode</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span><span class='period'>.</span><span class='id identifier rubyid_update_column'>update_column</span> <span class='symbol'>:codename</span><span class='comma'>,</span> <span class='id identifier rubyid_newcode'>newcode</span>
+  <span class='id identifier rubyid_reset_cache'>reset_cache</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reset_cache-class_method">
+  
+    .<strong>reset_cache</strong>  &#x21d2; <tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>clear codename cache both in local variable and in temporary and shared caches</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'card/lib/card/codename.rb', line 82</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reset_cache'>reset_cache</span>
+  <span class='ivar'>@codehash</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='op'>::</span><span class='const'><span class='object_link'><a href="../Card.html" title="Card (class)">Card</a></span></span><span class='period'>.</span><span class='id identifier rubyid_cache'><span class='object_link'><a href="Cache/CardClass.html#cache-instance_method" title="Card::Cache::CardClass#cache (method)">cache</a></span></span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CODENAMES</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Fri Dec 13 14:25:03 2024 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.2.2).
+</div>
+
+    </div>
+  </body>
+</html>
